@@ -1,0 +1,87 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/site-design-script/site-design-script.schema.json",
+  "actions": [
+    {
+      "verb": "createSPList",
+      "listName": "Daily IT Admin Checks",
+      "templateType": 100,
+      "subactions": [
+        {
+          "verb": "setDescription",
+          "description": "List to capture daily IT admin checks with links, results, and notes."
+        },
+        {
+          "verb": "addSPField",
+          "fieldType": "DateTime",
+          "displayName": "Date of Check",
+          "isRequired": true,
+          "addToDefaultView": true,
+          "internalName": "DateOfCheck"
+        },
+        {
+          "verb": "addSPField",
+          "fieldType": "User",
+          "displayName": "Admin Name",
+          "isRequired": true,
+          "addToDefaultView": true,
+          "internalName": "AdminName"
+        },
+        {
+          "verb": "addSPField",
+          "fieldType": "Text",
+          "displayName": "System/Asset Name",
+          "isRequired": true,
+          "addToDefaultView": true,
+          "internalName": "AssetName"
+        },
+        {
+          "verb": "addSPField",
+          "fieldType": "URL",
+          "displayName": "System/Asset Path or Link",
+          "isRequired": false,
+          "addToDefaultView": true,
+          "internalName": "AssetPath"
+        },
+        {
+          "verb": "addSPField",
+          "fieldType": "Choice",
+          "displayName": "Check Performed",
+          "choices": [
+            "Backup Verification",
+            "Disk Space Check",
+            "Security Logs",
+            "Services Running",
+            "Network Connectivity",
+            "Other"
+          ],
+          "isRequired": true,
+          "addToDefaultView": true,
+          "internalName": "CheckPerformed"
+        },
+        {
+          "verb": "addSPField",
+          "fieldType": "Choice",
+          "displayName": "Check Result",
+          "choices": [
+            "Successful",
+            "Warning",
+            "Failed"
+          ],
+          "isRequired": true,
+          "addToDefaultView": true,
+          "internalName": "CheckResult"
+        },
+        {
+          "verb": "addSPField",
+          "fieldType": "Note",
+          "displayName": "Notes / Comments",
+          "isRequired": false,
+          "addToDefaultView": true,
+          "internalName": "Notes"
+        }
+      ]
+    }
+  ],
+  "bindata": {},
+  "version": 1
+}
